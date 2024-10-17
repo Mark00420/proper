@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            overflow: hidden;
+        }
+        .bubble {
+            width: 50px;
+            height: 50px;
+            background-color: #00f;
+            border-radius: 50%;
+            position: absolute;
+            animation: riseAndBurst 5s linear infinite;
+        }
+        @keyframes riseAndBurst {
+            0% {
+                bottom: 0;
+                opacity: 1;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.8;
+                transform: scale(1.5);
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0;
+                transform: scale(0);
+            }
+        }
+    </style>
+    <title>Bubble Burst</title>
+</head>
+<body>
+    <script>
+        function createBubble() {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.left = Math.random() * window.innerWidth + 'px';
+            document.body.appendChild(bubble);
+            setTimeout(() => {
+                bubble.remove();
+            }, 5000);
+        }
+        setInterval(createBubble, 1000);
+    </script>
+</body>
+</html>

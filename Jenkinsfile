@@ -2,13 +2,13 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_HUB_REPO = 'your-docker-hub-username/bubble-app'
+        DOCKER_HUB_REPO = 'mark00420/bubble-app'
     }
 
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/yourusername/bubble-app.git'
+                git 'https://github.com/Mark00420/proper.git'
             }
         }
 

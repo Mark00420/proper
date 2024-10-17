@@ -8,7 +8,10 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/Mark00420/proper.git'
+                git(
+                    url: 'https://github.com/Mark00420/proper.git',
+                    credentialsId: 'fial'
+                )
             }
         }
 
@@ -23,7 +26,7 @@ pipeline {
         stage('Run Docker Container') {
             steps {
                 script {
-                    def container = docker.run("${DOCKER_HUB_REPO}:latest", '-p 3000:3000')
+                    docker.run("${DOCKER_HUB_REPO}:latest", '-p 3000:3000')
                 }
             }
         }

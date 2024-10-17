@@ -10,7 +10,7 @@ pipeline {
             steps {
                 git(
                     url: 'https://github.com/Mark00420/proper.git',
-                    credentialsId: 'fial'
+                    credentialsId: 'gitgit'
                 )
             }
         }
